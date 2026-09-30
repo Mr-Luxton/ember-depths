@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#101917"><meta name="description" content="Explore the Ember Depths: a free 2D dungeon crawler with spells, rare weapons, and procedurally populated rooms.">
+  <title>Ember Depths · Dungeon crawler</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header><a class="brand" href="./"><span class="sigil">◆</span> EMBER <b>DEPTHS</b></a><span class="edition">A DUNGEON CRAWLER / v0.1</span><div class="header-actions"><button id="sound" aria-label="Toggle sound">Sound off</button><button id="pause">Pause</button><button id="bag">Gear <kbd>I</kbd></button></div></header>
+  <main>
+    <section class="game-column">
+      <div class="status"><div class="vitals"><div class="bar-label"><span>VITALITY</span><span id="hp-label">100 / 100</span></div><div class="bar"><div id="hp-bar"></div></div><div class="xp-track"><div id="xp-bar"></div></div></div><div class="stat"><small>DEPTH</small><b id="floor">01 / 05</b></div><div class="stat"><small>LEVEL</small><b id="level">01</b></div><div class="stat gold"><small>GOLD</small><b id="gold">0</b></div></div>
+      <div class="viewport"><canvas id="game" width="960" height="600" tabindex="0" aria-label="Dungeon play area. Move with WASD or arrows; attack with space or J; interact with E; dash with Shift; heal with Q."></canvas><div id="room-label">THE MOSSBOUND HALLS</div><div id="hint"></div><div id="toast" role="status" aria-live="polite"></div><div id="overlay" class="overlay"><div id="modal" class="modal"></div></div></div>
+      <div class="touch-controls"><div id="stick" aria-label="Movement joystick"><div id="stick-thumb"></div></div><div class="touch-actions"><button id="touch-heal">HEAL</button><button id="touch-dash">DASH</button><button id="touch-use">USE</button><button id="touch-attack">ATTACK</button></div></div>
+      <footer><span><kbd>WASD</kbd> Move <kbd>SPACE</kbd> Attack <kbd>SHIFT</kbd> Dash</span><span><kbd>E</kbd> Use <kbd>Q</kbd> Heal <kbd>ESC</kbd> Pause</span></footer>
+    </section>
+    <aside><div class="aside-title">YOUR EXPEDITION <span id="class-label">—</span></div><section><div class="section-label">EQUIPPED WEAPON</div><div class="weapon-icon" id="weapon-icon">✦</div><h2 id="weapon-name">Choose your path</h2><p id="weapon-desc">The depths are waiting.</p><div class="weapon-stats"><span id="damage">— damage</span><span id="rarity">—</span></div></section><section><div class="section-label">FLOOR MAP <span id="room-count">0 / 9</span></div><div id="minimap"></div><p class="map-key">◆ You · ♜ Guardian · $ Merchant</p></section><section><div class="section-label">RELICS</div><div id="relics"><p>No relics discovered.</p></div></section><div class="supplies"><span>Healing flasks</span><b id="potions">3</b></div><div class="objective"><small>THE DESCENT</small><p id="objective">Defeat the guardian on each floor. Descend to face the Ember King.</p></div></aside>
+  </main><div class="bottom-line"><span>Every descent tells a different story.</span><span id="best">BEST DEPTH —</span></div>
+</div>
+<script src="game.js"></script>
+</body></html>
